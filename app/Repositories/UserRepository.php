@@ -10,7 +10,8 @@ class UserRepository {
         if(!$user) {
             $user = User::create([
                 'provider_id' => $userData->id,
-                'name' => $userData->nickname,
+                'name' => $userData->name,
+                'username' => $userData->nickname;
                 'email' => $userData->email,
                 'avatar' => $userData->avatar,
                 'active' => 1,
@@ -26,18 +27,21 @@ class UserRepository {
         $socialData = [
             'avatar' => $userData->avatar,
             'email' => $userData->email,
-            'name' => $userData->nickname
+            'name' => $userData->name,
+            'username' => $userData->nickname
         ];
         $dbData = [
             'avatar' => $user->avatar,
             'email' => $user->email,
-            'name' => $user->nickname
+            'name' => $user->name,
+            'username' => $user->nickname
         ];
 
         if (!empty(array_diff($socialData, $dbData))) {
             $user->avatar = $userData->avatar;
             $user->email = $userData->email;
-            $user->name = $userData->nickname;
+            $user->name = $userData->name;
+            $user->username = $userData->nickname;
             $user->save();
         }
     }
