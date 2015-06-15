@@ -14,14 +14,11 @@ class AddSocialToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('name');
             $table->string('username')->nullable();
-            $table->string('email')->nullable();
+            $table->string('email')->nullable()->change();
             $table->string('avatar');
             $table->string('provider');
             $table->string('provider_id')->unique();
-            $table->rememberToken();
-            $table->timestamps();
         });
     }
 
