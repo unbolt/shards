@@ -1,4 +1,6 @@
-<?php namespace App;
+<?php
+
+namespace Shards;
 // AuthenticateUser.php
 use Illuminate\Contracts\Auth\Guard;
 use Laravel\Socialite\Contracts\Factory as Socialite;
