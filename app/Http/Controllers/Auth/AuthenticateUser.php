@@ -1,6 +1,6 @@
 <?php
 
-namespace Shards;
+namespace Shards\Http\Controllers\Auth;
 // AuthenticateUser.php
 use Illuminate\Contracts\Auth\Guard;
 use Laravel\Socialite\Contracts\Factory as Socialite;
