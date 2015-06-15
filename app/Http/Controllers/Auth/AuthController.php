@@ -7,6 +7,7 @@ use Validator;
 use Shards\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Request;
+use Session;
 
 class AuthController extends Controller
 {
