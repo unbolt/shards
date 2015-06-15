@@ -17,7 +17,7 @@ class UserController extends Controller {
 
     public function __construct() {
         // We want authentication on by default for this controller
-        $this->middleware('Authenticate');
+        $this->middleware('auth');
     }
 
     public function dashboard() {
