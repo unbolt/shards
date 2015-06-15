@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Shards
+        psr4_prefix: Shards
+        src_path: app
