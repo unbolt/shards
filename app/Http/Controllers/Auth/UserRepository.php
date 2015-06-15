@@ -1,7 +1,7 @@
 <?php
-namespace App\Repositories;
+namespace Shards\Repositories;
 
-use App\User;
+use Shards\User;
 
 class UserRepository {
     public function findByUserNameOrCreate($userData) {
