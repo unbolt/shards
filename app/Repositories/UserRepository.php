@@ -11,7 +11,7 @@ class UserRepository {
             $user = User::create([
                 'provider_id' => $userData->id,
                 'name' => $userData->name,
-                'username' => $userData->nickname;
+                'username' => $userData->nickname,
                 'email' => $userData->email,
                 'avatar' => $userData->avatar,
                 'active' => 1,
