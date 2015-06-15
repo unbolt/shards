@@ -8,7 +8,7 @@ class UserRepository {
         $user = User::where('provider_id', '=', $userData->id)->first();
 
         print_r($userData);
-        die();
+        //die();
 
         if(!$user) {
             $user = User::create([
