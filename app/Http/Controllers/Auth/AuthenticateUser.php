@@ -4,7 +4,7 @@ namespace Shards;
 // AuthenticateUser.php
 use Illuminate\Contracts\Auth\Guard;
 use Laravel\Socialite\Contracts\Factory as Socialite;
-use App\Repositories\UserRepository; use Request;
+use Shards\Repositories\UserRepository; use Request;
 
 class AuthenticateUser {
 
