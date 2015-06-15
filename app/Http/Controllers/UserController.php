@@ -1,6 +1,6 @@
 <?php
 
-namespace Shards\Http\UserController;
+namespace Shards\Http\Controllers\UserController;
 
 use Shards\Http\Controllers\Controller;
 
