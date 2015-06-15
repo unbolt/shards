@@ -68,4 +68,9 @@ class AuthController extends Controller
         $input = Request::all();
         return $authenticateUser->execute($input, $this, $provider);
     }
+
+    public function userHasLoggedIn($user) {
+        Session::flash('message', 'Welcome, ' . $user->username);
+        return redirect('/dashboard');
+    }
 }
