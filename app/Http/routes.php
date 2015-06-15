@@ -15,4 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
+    User related functions
+*/
+
+// Login
 Route::get('login/{provider?}', 'Auth\AuthController@login');
+
+// Logout
+
+// User dashboard
+Route::get('dashboard', 'UserController@dashboard');
