@@ -10,11 +10,11 @@
             <form method="POST" action="/login">
                 {!! csrf_field() !!}
                 <div>
-                    <input type="email" name="email" value="{{ old('email') }}" placeholder="E-mail" class="form-control">
+                    <input type="email" name="email" value="{{ old('email') }}" placeholder="E-mail" class="form-control" tabindex="1" autocomplete="off" autocorrect="off" spellcheck="false">
                 </div>
 
                 <div>
-                    <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+                    <input type="password" name="password" id="password" placeholder="Password" class="form-control" tabindex="2" autocomplete="off" autocorrect="off" spellcheck="false">
                 </div>
 
                 <div>
