@@ -14,6 +14,7 @@ class AddCustomFieldsToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
+            $table->string('avatar');
         });
     }
 
@@ -26,6 +27,7 @@ class AddCustomFieldsToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
+            $table->dropColumn('avatar');
         });
     }
 }
