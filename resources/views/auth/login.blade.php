@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('title', 'Login')
+@section('body_class', 'login')
 
 @section('content')
 

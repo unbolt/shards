@@ -15,7 +15,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
         {!! Toastr::render() !!}
     </head>
-    <body>
+    <body class="@yield('body_class')">
         @yield('content')
 
 
