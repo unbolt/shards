@@ -22,6 +22,12 @@
         @if (count($errors) > 0)
             <script>
                 $(document).ready(function() {
+
+                    toastr.options.showEasing = 'swing';
+                    toastr.options.hideEasing = 'linear';
+                    toastr.options.progressBar = true;
+                    toastr.options.closeButton = true;
+
                     @foreach ($errors->all() as $error)
                         toastr.error('{{ $error }}');
                     @endforeach
