@@ -17,5 +17,16 @@
     </head>
     <body>
         @yield('content')
+
+
+        @if (count($errors) > 0)
+            <script>
+                $(document).ready(function() {
+                    @foreach ($errors->all() as $error)
+                        toastr.error('{{ $error }}');
+                    @endforeach
+                });
+            </script>
+        @endif
     </body>
 </html>
