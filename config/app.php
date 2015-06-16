@@ -136,7 +136,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Laravel\Socialite\SocialiteServiceProvider::class,
         Kamaln7\Toastr\ToastrServiceProvider::class,
 
         /*
@@ -193,7 +192,6 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        'Socialize' => Laravel\Socialite\Facades\Socialite::class,
         'Toastr'    => Kamaln7\Toastr\Facades\Toastr::class
 
     ],
