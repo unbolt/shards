@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <form method="POST" action="/auth/register">
+    <form method="POST" action="/register">
         {!! csrf_field() !!}
         <div class="container">
             <div class="row">
