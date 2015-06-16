@@ -19,8 +19,9 @@ Route::get('/', function () {
     User related functions
 */
 
+// Register
+
 // Login
-Route::get('login/{provider?}', 'Auth\AuthController@login');
 
 // Logout
 
