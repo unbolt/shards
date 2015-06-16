@@ -11,7 +11,7 @@
             <form method="POST" action="/login">
                 {!! csrf_field() !!}
                 <div>
-                    <input type="email" name="email" value="{{ old('email') }}" placeholder="E-mail" class="form-control" tabindex="1" autocomplete="off" autocorrect="off" spellcheck="false">
+                    <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" class="form-control" tabindex="1" autocomplete="off" autocorrect="off" spellcheck="false">
                 </div>
 
                 <div>
@@ -23,7 +23,10 @@
                 </div>
 
                 <div>
-                    <button type="submit">Login</button>
+                    <button id="submit" type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+                </div>
+                <div>
+                    <a href="/register" class="btn btn-block btn-large">Register Account</a>
                 </div>
             </form>
         </div>
