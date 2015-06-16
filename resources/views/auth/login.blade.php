@@ -9,19 +9,16 @@
         <div class="col-md-4 col-md-offset-4">
             <form method="POST" action="/login">
                 {!! csrf_field() !!}
-
                 <div>
-                    Email
-                    <input type="email" name="email" value="{{ old('email') }}">
+                    <input type="email" name="email" value="{{ old('email') }}" placeholder="E-mail">
                 </div>
 
                 <div>
-                    Password
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password" placeholder="Password">
                 </div>
 
                 <div>
-                    <input type="checkbox" name="remember"> Remember Me
+                    <input type="checkbox" name="remember"> Keep me logged in
                 </div>
 
                 <div>
