@@ -9,6 +9,6 @@
 }
 
 body.login {
-    @extends .background-fullsize;
+    @extend .background-fullsize;
     background-image: url('/images/badlands.png');
 }
