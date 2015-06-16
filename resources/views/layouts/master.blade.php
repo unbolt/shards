@@ -6,7 +6,7 @@
         <!-- include some styles -->
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
         <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
-        <link href="/css/shards.css" rel="stylesheet">
+        <link href="{{ elixir('css/shards.css') }}" rel="stylesheet">
 
         <!-- include our scripts -->
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
