@@ -5,6 +5,8 @@
 @section('content')
 
     <form method="POST" action="/register">
+        {{ $err }}
+
         {!! csrf_field() !!}
         <div class="container">
             <div class="row">
