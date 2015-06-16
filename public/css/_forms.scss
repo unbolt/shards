@@ -1,3 +1,7 @@
+textarea, input {
+    outline: none;
+}
+
 .standard-input {
     border-radius: 1px;
 }
@@ -14,6 +18,14 @@
     border-color: rgba(255,255,255,0.3);
     background-color: rgba(0,0,0,0.5);
     color: rgba(255,255,255,0.7);
+
+    &:hover {
+        border-color: rgba(255,255,255,0.7);
+    }
+
+    &:focus {
+        border-color: $highlight;
+    }
 }
 
 .login {
