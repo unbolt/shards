@@ -19,6 +19,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-right">
+                    Name
+                </div>
+                <div class="col-md-4">
+                    <input type="name" name="name" value="{{ old('name') }}">
+                </div>
+                <div class="col-md-4">
+                    This is your friendly name, no one will ever see your email address.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 text-right">
                     Email
                 </div>
                 <div class="col-md-4">
