@@ -1,0 +1,32 @@
+.userbar-container {
+    xposition: fixed;
+    xtop: 0;
+    z-index: 99;
+
+    .userbar-inner {
+        .userbar {
+
+            text-align: right;
+            line-height: 30px;
+
+            ul {
+                list-style: none;
+
+                li {
+                    display: inline-block;
+                    background-color: #cecece;
+                    padding: 0 15px 0 15px;
+
+                    &.logo {
+                           border-bottom-left-radius: 5px;
+                    }
+
+                    &.about {
+                        background-color: red;
+                        border-bottom-right-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
