@@ -17,9 +17,15 @@ $(function() {
         // Add some classes to it
         chatBox.addClass('chatbox');
 
+        // Give our chat some heading
+        var header = $('<div>');
+        header.addClass('header');
+        header.text('Chat');
+
         // Create a container for our chat message
         var messages = $('<div>');
         messages.addClass('messages');
+        messages.addClass('container');
 
         // Create an input for putting in chat messages
         var inputContainer = $('<div>');
@@ -41,7 +47,7 @@ $(function() {
         inputContainer.append(input);
 
         // Throw all the bits in the box
-        chatBox.append(messages).append(inputContainer);
+        chatBox.append(header).append(messages).append(inputContainer);
 
         // Append chat box to the page
         $('body').append(chatBox);
@@ -68,16 +74,20 @@ $(function() {
     function showChatMessage(message) {
         // Add the message to the chat box
         var messageContainer = $('<div>');
+        messageContainer.addClass('message-container');
 
         // Add the persons name before the message
-        var userContainer = $('<span>');
-        userContainer.append(message.username);
+        var userContainer = $('<div>');
+        userContainer.addClass('avatar');
+        userContainer.css('background-image', 'url(/avatars/'+message.username+'.jpg)')
+        //userContainer.append(message.username);
 
         // Add the username to the container
         messageContainer.append(userContainer);
 
         // Add the message to the container
         var messageText = $('<div>');
+        messageText.addClass('message-text');
         messageText.text(message.message);
         messageContainer.append(messageText);
 
