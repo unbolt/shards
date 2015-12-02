@@ -3,4 +3,5 @@
 /public/css
 .env
 .DS_Store
-/public/build/
+/public/build
+/public/js
