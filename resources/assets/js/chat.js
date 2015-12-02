@@ -76,7 +76,7 @@ $(function() {
 
     console.log('Initializing chat...');
 
-    var conn = new WebSocket('ws://shards.dev:9090');
+    var conn = new WebSocket('ws://'+window.location.hostname+':9090');
 
     conn.onopen = function(e) {
         console.log('Connection Established!');
