@@ -8,7 +8,7 @@
     background-size: cover;
 }
 
-body.login {
+body.login, body {
     @extend .background-fullsize;
     background-image: url('/images/badlands.png');
 }

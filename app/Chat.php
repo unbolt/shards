@@ -49,6 +49,27 @@ class Chat implements MessageComponentInterface {
 
         echo "New connection! ({$conn->resourceId})\n";
 
+        $conn->session->start();
+
+        $userID = $conn->session->get(Auth::getName());
+
+        if($userID) {
+            $user = User::find($userID);
+            echo "Username: {$user->name}\n";
+        } 
+
+        // Broadcast the new connection
+        $return = array();
+
+        $return['message_type'] = 'broadcast';
+        $return['message'] = "{$user->name} has connected.";
+
+        $return = json_encode($return);
+
+        // Broadcast the message to everyone
+        foreach ($this->clients as $client) {
+            $client->send($return);
+        }
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {

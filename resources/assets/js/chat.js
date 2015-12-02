@@ -37,7 +37,7 @@ $(function() {
                 $(input).val('');
             }
         });
-
+        input.attr('placeholder', 'Say something...');
         inputContainer.append(input);
 
         // Throw all the bits in the box
@@ -55,6 +55,17 @@ $(function() {
     }
 
     function receiveMessage(message) {
+        // Utility function to check what kind of message we're dealing with
+        // and then pass it off to the appropriate function to deal with it.
+
+        if(message.message_type === 'broadcast') {
+            showBroadcastMessage(message);
+        } else if(message.message_type === 'chat') {
+            showChatMessage(message);
+        }
+    }
+
+    function showChatMessage(message) {
         // Add the message to the chat box
         var messageContainer = $('<div>');
 
@@ -66,10 +77,23 @@ $(function() {
         messageContainer.append(userContainer);
 
         // Add the message to the container
-        messageContainer.append(message.message);
+        var messageText = $('<div>');
+        messageText.text(message.message);
+        messageContainer.append(messageText);
 
+        // Add the message to the message container and scroll down a ton
+        // Possibly might not work when there's a LOT of chat messages, but
+        // chances are that will never happen.
+        $('.messages').prepend(messageContainer).scrollTop(1E10);
+    }
 
-        $('.messages').append(messageContainer);
+    function showBroadcastMessage(message) {
+        var messageContainer = $('<div>');
+        messageContainer.addClass('broadcast');
+
+        messageContainer.text(message.message);
+
+        $('.messages').prepend(messageContainer).scrollTop(1E10);
     }
 
 
@@ -80,7 +104,6 @@ $(function() {
 
     conn.onopen = function(e) {
         console.log('Connection Established!');
-        conn.send('Hello Me!');
         createChatBox();
     };
 
@@ -89,6 +112,8 @@ $(function() {
         // We are returning a json array, need to parse it properly
         // doing this before passing it off to handlers
         var messageJSON = $.parseJSON(e.data);
+
+        // Pass message off to message handler
         receiveMessage(messageJSON);
     };
 });
