@@ -49,8 +49,8 @@ $(function() {
         // Throw all the bits in the box
         chatBox.append(header).append(messages).append(inputContainer);
 
-        // Append chat box to the page
-        $('body').append(chatBox);
+        // Append chat box to the page - hidden for now, no need for it!
+        //$('body').append(chatBox);
     }
 
     function sendMessage(message) {
