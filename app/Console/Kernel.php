@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \Shards\Console\Commands\Inspire::class,
         \Shards\Console\Commands\ChatServer::class,
+        \Shards\Console\Commands\MovementServer::class
     ];
 
     /**
