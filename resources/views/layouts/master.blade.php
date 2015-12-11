@@ -11,17 +11,12 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script src="//cdn.jsdelivr.net/phaser/2.4.4/phaser.min.js"></script>
         <script src="{{ elixir('js/shards.js') }}"></script>
         {!! Toastr::render() !!}
-    </head>
-    <body class="@yield('body_class')">
-        @yield('content')
 
-
-        @if (count($errors) > 0)
-            <script>
-                $(document).ready(function() {
-
+        <script>
+            $(document).ready(function() {
                     toastr.options.showEasing = 'swing';
                     toastr.options.hideEasing = 'linear';
                     toastr.options.progressBar = true;
@@ -30,8 +25,16 @@
                     @foreach ($errors->all() as $error)
                         toastr.error('{{ $error }}');
                     @endforeach
+
+                    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                        @if(Session::has('alert-' . $msg))
+                            toastr.{{ $msg }}('{{ Session::get('alert-' . $msg) }}');
+                        @endif
+                    @endforeach
                 });
-            </script>
-        @endif
+        </script>
+    </head>
+    <body class="@yield('body_class')">
+        @yield('content')
     </body>
 </html>
