@@ -77,7 +77,10 @@ class JobController extends Controller
      */
     public function show($id)
     {
-        //
+        // Fetch job by ID  
+        $job = Job::find($id);
+
+        return $job;
     }
 
     /**

@@ -70,7 +70,10 @@ class RaceController extends Controller
      */
     public function show($id)
     {
-        //
+        // Return race data
+        $race = Race::find($id);
+
+        return $race;
     }
 
     /**
