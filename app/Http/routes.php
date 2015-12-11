@@ -44,6 +44,3 @@ Route::resource('job', 'JobController');
 
 // Race - RESTful
 Route::resource('race', 'RaceController');
-
-// Item related routes - all RESTful
-Route::resource('itemquality', 'ItemQualityController');
