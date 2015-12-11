@@ -8,7 +8,16 @@
     background-size: cover;
 }
 
-body.login, body {
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background-color: #000;
+    @include linear-gradient(#ABBAAB, #FFFFFF);
+}
+
+body.login {
     @extend .background-fullsize;
     background-image: url('/images/badlands.png');
 }

@@ -10,7 +10,7 @@
 
     <div class="container">
         <div class="col-md-12">
-            This is a test
+            <div id="phaser-example"></div>
         </div>
     </div>
 @stop
