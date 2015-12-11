@@ -14,6 +14,16 @@ class CreateRaceTable extends Migration
     {
         Schema::create('races', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->text('description');
+            // Bonus stats fields
+            $table->integer('agility');
+            $table->integer('dexterity');
+            $table->integer('strength');
+            $table->integer('intelligence');
+            $table->integer('mind');
+            $table->integer('charisma');
+            // Sure timestamps why not
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ class StoreRaceRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class StoreRaceRequest extends Request
     public function rules()
     {
         return [
-            //
+            'name' => 'required|unique:races',
+            'description' => 'required',
+            'agility' => 'required|between:0,3',
+            'dexterity' => 'required|between:0,3',
+            'strength' => 'required|between:0,3',
+            'mind' => 'required|between:0,3',
+            'intelligence' => 'required|between:0,3',
+            'charisma' => 'required|between:0,3'
         ];
     }
 }

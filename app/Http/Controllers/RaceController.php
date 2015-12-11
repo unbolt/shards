@@ -4,8 +4,12 @@ namespace Shards\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Session;
 use Shards\Http\Requests;
+use Shards\Http\Requests\StoreRaceRequest;
 use Shards\Http\Controllers\Controller;
+
+use Shards\Race;
 
 class RaceController extends Controller
 {
@@ -36,9 +40,26 @@ class RaceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRaceRequest $request)
     {
-        //
+        $race = new Race;
+
+        $race->name = $request->name;
+        $race->description = $request->description;
+        $race->agility = $request->agility;
+        $race->dexterity = $request->dexterity;
+        $race->strength = $request->strength;
+        $race->mind = $request->mind;
+        $race->intelligence = $request->intelligence;
+        $race->charisma = $request->charisma;
+
+        if($race->save()) {
+            Session::flash('alert-success', 'Race created');
+            return back(); // TODO: Send them to the race list instead
+        } else {
+            Session::flash('alert-error', 'Could not create race');
+            return back();
+        }
     }
 
     /**

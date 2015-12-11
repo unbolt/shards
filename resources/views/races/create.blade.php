@@ -15,6 +15,8 @@
 
                 {!! Form::text('name', null, array('placeholder' => 'Race Name')) !!}
 
+                {!! Form::textarea('description', null, array('placeholder' => 'Description')); !!}
+
                 <h2>Bonus Stats</h2>
 
                 {!! Form::label('agility', 'Agility') !!}
