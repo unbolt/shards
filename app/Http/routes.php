@@ -35,3 +35,12 @@ Route::post('register', 'Auth\AuthController@postRegister');
 
 // User dashboard
 Route::get('dashboard', 'UserController@dashboard');
+
+// Character - RESTful
+Route::resource('character', 'CharacterController');
+
+// Job - RESTful
+Route::resource('job', 'JobController');
+
+// Race - RESTful
+Route::resource('race', 'RaceController');
