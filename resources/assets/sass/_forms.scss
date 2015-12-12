@@ -74,3 +74,22 @@ textarea, input {
         margin-bottom: 10px;
     }
 }
+
+/* Icon Selection */
+.icon-selection {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    height: 200px;
+    overflow: hidden;
+
+    &:hover {
+        overflow: auto;
+    }
+
+    div {
+        display: flex;
+        margin-bottom: 3px;
+    }
+}

@@ -44,3 +44,6 @@ Route::resource('job', 'JobController');
 
 // Race - RESTful
 Route::resource('race', 'RaceController');
+
+// ARMOUR
+Route::resource('armour', 'ArmourController');

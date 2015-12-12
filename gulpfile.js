@@ -7,10 +7,17 @@ elixir(function(mix) {
     // Merge javascripts
         .scripts(
             [
-                'globals.js',           // Global variables
-                'lib/utility.js',       // Utility functions used throughout
-                'chat.js',              // Chat
-                'character/create.js'   // Character creation
+                // jQuery libraries
+
+
+                // Global and utility stuff
+                'globals.js',               // Global variables
+                'lib/utility.js',           // Utility functions used throughout
+
+                // Useful things
+                'chat.js',                  // Chat
+                'character/create.js',      // Character creation
+                'item/armour/create.js'    // Armour creation
             ],
 
             'public/js/shards.js')
