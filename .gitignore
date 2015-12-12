@@ -3,6 +3,8 @@
 /public/css
 .env
 .DS_Store
+/public/assets
 /public/build
+/public/icons
 /public/js
 /public/avatars
