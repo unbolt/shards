@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call('ArmourTypeTableSeeder');
+        $this->call('ArmourSlotTableSeeder');
 
         Model::reguard();
     }

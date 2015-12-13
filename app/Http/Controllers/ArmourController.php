@@ -13,6 +13,7 @@ use Shards\Http\Controllers\Controller;
 use Shards\Armour;
 use Shards\ItemQuality;
 use Shards\ArmourType;
+use Shards\ArmourSlot;
 
 class ArmourController extends Controller
 {
@@ -23,7 +24,11 @@ class ArmourController extends Controller
      */
     public function index()
     {
-        //
+        // Get armour listing
+        $armour = Armour::orderBy('level', 'asc')->paginate(20);
+
+        return view('items.armour.index')
+                ->with('armour', $armour);
     }
 
     /**
@@ -41,6 +46,9 @@ class ArmourController extends Controller
         // Get the armour types
         $types = ArmourType::lists('name', 'id');
 
+        // Get the armour slots
+        $slots = ArmourSlot::lists('name', 'id');
+
         // Get the list of icons (this is quite large, might need a cleaner way of doing this in future?)
         $iconpath = base_path('public/assets/icons');
         $icons = array_map( 'basename', File::files( $iconpath ));
@@ -48,6 +56,7 @@ class ArmourController extends Controller
         return view('items.armour.create')
                 ->with('qualities', $qualities)
                 ->with('types', $types)
+                ->with('slots', $slots)
                 ->with('icons', $icons);
     }
 
@@ -69,6 +78,7 @@ class ArmourController extends Controller
 
         $armour->quality_id = $request->quality_id;
         $armour->armour_type_id = $request->armour_type_id;
+        $armour->armour_slot_id = $request->armour_slot_id;
 
         $armour->icon = $request->icon;
 

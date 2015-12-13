@@ -8,15 +8,17 @@ elixir(function(mix) {
         .scripts(
             [
                 // jQuery libraries
-
+                '/lib/plugins/jquery.serializeObject.js',
 
                 // Global and utility stuff
                 'globals.js',               // Global variables
                 'lib/utility.js',           // Utility functions used throughout
+                'lib/tooltip.js',
 
                 // Useful things
                 'chat.js',                  // Chat
                 'character/create.js',      // Character creation
+                'item/index.js',            // Item listing
                 'item/armour/create.js'    // Armour creation
             ],
 
