@@ -1,0 +1,35 @@
+.quality-1 {
+    color: $common;
+}
+
+.quality-3 {
+    color: $fine;
+}
+
+.quality-4 {
+    color: $rare;
+}
+
+.quality-5 {
+    color: $prime;
+}
+
+.quality-6 {
+    color: $shard;
+}
+
+.item-table {
+    td, th {
+        text-align: center;
+    }
+
+    td.item-name, th.item-name {
+        text-align: left;
+    }
+}
+
+.item-icon {
+    border-radius: 3px;
+    width: 32px;
+    height: auto;
+}

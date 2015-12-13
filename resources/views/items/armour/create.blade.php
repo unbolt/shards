@@ -35,6 +35,9 @@
                     {!! Form::select('armour_type_id', $types, null, ['placeholder' => 'Choose Type', 'class' => 'form-control']); !!}
                 </div>
                 <div class="form-group">
+                    {!! Form::select('armour_slot_id', $slots, null, ['placeholder' => 'Choose Slot', 'class' => 'form-control']); !!}
+                </div>
+                <div class="form-group">
                     <div class="icon-selection">
                         {!! Form::hidden('icon') !!}
                         @foreach($icons as $icon)
@@ -51,6 +54,11 @@
                     {!! Form::submit('Save') !!}
                 </div>
                 {!! Form::close() !!}
+            </div>
+            <div class="col-md-6">
+                <div class="display-tooltip">
+
+                </div>
             </div>
         </div>
     </div>

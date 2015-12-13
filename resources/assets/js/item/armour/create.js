@@ -89,6 +89,13 @@ $(function() {
         $('input, select, textarea').change(function() {
             // Call function to generate a thumbnail but pass it the form data (?)
             // TODO
+
+            console.log('Form changed...');
+
+            var form = $('.armour-creation-container form');
+            var itemData = form.serializeObject();
+
+            $('.display-tooltip').html(createTooltip(itemData));
         });
     }
 

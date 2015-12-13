@@ -1,9 +1,26 @@
-/*
-    TOOLTIPS!
+$tooltip-item-padding: 3px;
 
-    Also handles icons
-*/
+.shards-tooltip {
 
-.item-icon {
+    background-color: rgba(0,0,0,0.8);
+
+    padding: $tooltip-item-padding;
+    border-radius: $tooltip-item-padding;
+
+    display: flex;
+
+    img {
+        border: 1px solid red;
+        border-radius: $tooltip-item-padding;
+        display: flex;
+
+        margin-right: $tooltip-item-padding;
+        margin-bottom: $tooltip-item-padding;
+    }
+
+    .name {
+        display: flex;
+        font-size: 1.4em;
+    }
 
 }
