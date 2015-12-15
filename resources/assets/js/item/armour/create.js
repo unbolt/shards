@@ -31,9 +31,6 @@ $(function() {
             ddItem.text(i);
 
             iLvlSelect.append(ddItem);
-
-            delete ddItem;
-
             i++;
         }
 

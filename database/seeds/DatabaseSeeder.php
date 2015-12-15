@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call('ArmourSlotTableSeeder');
         $this->call('MonsterTypeTableSeeder');
         $this->call('MonsterRankTableSeeder');
+        $this->call('WeaponTypeTableSeeder');
 
         Model::reguard();
     }

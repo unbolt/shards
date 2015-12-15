@@ -48,7 +48,9 @@ Route::resource('race', 'RaceController');
 // ARMOUR
 Route::get('armour/search/{term}', 'ArmourController@search');
 Route::resource('armour', 'ArmourController');
-
+// WEAPONS
+Route::get('weapon/search/{term}', 'WeaponController@search');
+Route::resource('weapon', 'WeaponController');
 
 // Monsters
 Route::resource('monster', 'MonsterController');

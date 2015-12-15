@@ -14,6 +14,7 @@ use Shards\Monster;
 use Shards\Spawn;
 use Shards\Drop;
 use Shards\Armour;
+use Shards\Weapon;
 
 class SpawnController extends Controller
 {
@@ -66,6 +67,9 @@ class SpawnController extends Controller
                 switch ($drop['type']) {
                     case 'armour':
                         $item = Armour::where('id', $drop['id'])->first();
+                        break;
+                    case 'weapon':
+                        $item = Weapon::where('id', $drop['id'])->first();
                         break;
                 }
 

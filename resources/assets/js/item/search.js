@@ -11,6 +11,17 @@ $(function() {
         }
     });
 
+    var weaponItems = new Bloodhound({
+        datumTokenizer: function (datum) {
+            return Bloodhound.tokenizers.whitespace(datum.value);
+        },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url: '/weapon/search/%QUERY',
+            wildcard: '%QUERY'
+        }
+    });
+
     $('.typeahead') // TODO: Change this to be something more descriptive
         .on('keypress', function(e) {
             return e.which !== 13;
@@ -24,6 +35,15 @@ $(function() {
                 async: true,
                 display: 'name',
                 source: armourItems,
+                templates: {
+                    suggestion: Handlebars.compile('<div><img src="'+ EQUIPMENT_ICON_URL + '{{icon}}" /><strong>{{name}}</strong></div>')
+                }
+            },
+            {
+                name: 'weaponItems',
+                async: true,
+                display: 'name',
+                source: weaponItems,
                 templates: {
                     suggestion: Handlebars.compile('<div><img src="'+ EQUIPMENT_ICON_URL + '{{icon}}" /><strong>{{name}}</strong></div>')
                 }
