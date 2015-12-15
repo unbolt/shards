@@ -9,6 +9,8 @@ elixir(function(mix) {
             [
                 // jQuery libraries
                 '/lib/plugins/jquery.serializeObject.js',
+                '/lib/plugins/jquery.typeahead.bundle.js',
+                '/lib/plugins/jquery.bootstrapSlider.js',
 
                 // Global and utility stuff
                 'globals.js',               // Global variables
@@ -19,6 +21,7 @@ elixir(function(mix) {
                 'chat.js',                  // Chat
                 'character/create.js',      // Character creation
                 'item/index.js',            // Item listing
+                'item/search.js',
                 'item/armour/create.js'    // Armour creation
             ],
 

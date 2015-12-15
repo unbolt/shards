@@ -9,6 +9,7 @@
 var ENDPOINT_RACE = '/race/';
 var ENDPOINT_JOB = '/job/';
 var ENDPOINT_CHARACTER = '/character/';
+var ENDPOINT_ARMOUR = '/armour/';
 
 // URLs
 var BASE_URL = '/';

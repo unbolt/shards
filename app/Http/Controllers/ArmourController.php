@@ -94,6 +94,12 @@ class ArmourController extends Controller
 
     }
 
+    public function search($term) {
+        $armour = Armour::where('name', 'LIKE', '%'.$term.'%')->get();
+
+        return $armour;
+    }
+
     /**
      * Display the specified resource.
      *

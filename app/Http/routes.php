@@ -46,4 +46,10 @@ Route::resource('job', 'JobController');
 Route::resource('race', 'RaceController');
 
 // ARMOUR
+Route::get('armour/search/{term}', 'ArmourController@search');
 Route::resource('armour', 'ArmourController');
+
+
+// Monsters
+Route::resource('monster', 'MonsterController');
+Route::resource('spawn', 'SpawnController');
