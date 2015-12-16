@@ -55,3 +55,4 @@ Route::resource('weapon', 'WeaponController');
 // Monsters
 Route::resource('monster', 'MonsterController');
 Route::resource('spawn', 'SpawnController');
+Route::get('spawn/drops/{id}', 'SpawnController@getDrops');

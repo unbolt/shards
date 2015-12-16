@@ -87,6 +87,39 @@ class SpawnController extends Controller
         }
     }
 
+    public function getDrops($id) {
+        /*
+            Returns a randomly generated set of drops for the specific spawn
+        */
+
+        $spawn = Spawn::findOrFail($id);
+
+        // Loop through drops
+        foreach($spawn->drops as $drop) {
+            $dropcheck = rand(0,100);
+
+            if($drop->chance >= $dropcheck) {
+                // TODO : Add item to characters inventory here
+
+                // Create an array to return to the client
+                $return = collect([
+                    [
+                        'id' => $drop->droppable->id,
+                        'type' => $drop->droppable->type,
+                        'name' => $drop->droppable->name,
+                        'quality_id' => $drop->droppable->quality_id
+                    ]
+                ]);
+            }
+        }
+
+        if(!empty($return)) {
+            return response()->json($return);
+        } else {
+            return response()->json(Array(),204);
+        }
+    }
+
     /**
      * Display the specified resource.
      *
@@ -95,7 +128,10 @@ class SpawnController extends Controller
      */
     public function show($id)
     {
-        //
+        $spawn = Spawn::findOrFail($id);
+
+        return view('spawns.show')
+                ->with('spawn', $spawn);
     }
 
     /**

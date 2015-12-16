@@ -35,3 +35,26 @@ function randomString(len, charSet) {
     }
     return randomString;
 }
+
+/*
+    Repeater
+    - Repeats a function
+    - interval = milliseconds
+    - repeats = number of times to run functions
+    - immediate = can trigger immediately
+*/
+function repeatXI(callback, interval, repeats, immediate) {
+    var timer, trigger;
+    trigger = function () {
+        callback();
+        --repeats || clearInterval(timer);
+    };
+
+    interval = interval <= 0 ? 1000 : interval; // default: 1000ms
+    repeats  = parseInt(repeats, 10) || 0;      // default: repeat forever
+    timer    = setInterval(trigger, interval);
+
+    if( !!immediate ) { // Coerce boolean
+        trigger();
+    }
+}

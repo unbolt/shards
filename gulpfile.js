@@ -22,7 +22,8 @@ elixir(function(mix) {
                 'character/create.js',      // Character creation
                 'item/index.js',            // Item listing
                 'item/search.js',
-                'item/armour/create.js'    // Armour creation
+                'item/armour/create.js',     // Armour creation
+                'spawns/show.js'            // Runs drop testing for spawns page
             ],
 
             'public/js/shards.js')
