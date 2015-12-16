@@ -4,8 +4,6 @@
 
 @section('content')
 
-    @include('users.userbar')
-
     <div class="container armour-creation-container">
         <div class="row">
             <div class="col-md-6">

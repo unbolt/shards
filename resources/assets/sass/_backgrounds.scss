@@ -14,10 +14,10 @@ html, body {
 
 body {
     background-color: #000;
-    @include linear-gradient(#ABBAAB, #FFFFFF);
+    @include linear-gradient(#333D4E, #344F62);
 }
 
 body.login {
-    @extend .background-fullsize;
-    background-image: url('/images/badlands.png');
+    //@extend .background-fullsize;
+    //background-image: url('/images/badlands.png');
 }

@@ -1,30 +1,69 @@
-.userbar-container {
+.navbar-default {
     z-index: 99;
+    background-color: transparentize(darken(#333D4E,10%), 0.1);
+    border: 0px;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(255,255,255,0.7);
 
-    .userbar-inner {
-        .userbar {
+    line-height: 50px;
 
-            text-align: right;
-            line-height: 30px;
+    @include font-size(1.6);
 
-            ul {
-                list-style: none;
+    color: #fff;
 
-                li {
-                    display: inline-block;
-                    background-color: #cecece;
-                    padding: 0 15px 0 15px;
+    .navbar-toggle {
+        &:hover, &:active, &:focus {
+            background-color: transparent;
+            color: #fff;
+        }
+    }
 
-                    &.logo {
-                           border-bottom-left-radius: 5px;
-                    }
+    .navbar-brand {
+        padding-left: 15px;
+        padding-top: 5px;
+    }
 
-                    &.about {
-                        background-color: red;
-                        border-bottom-right-radius: 5px;
-                    }
+    .navbar-nav {
+        > li {
+            > a {
+                &:focus, &:hover {
+                    color: #fff;
                 }
             }
+        }
+
+        > .open {
+            > a, > a:active, >a:hover, >a:focus {
+                background-color: transparent;
+                color: #fff;
+            }
+        }
+
+        .active {
+            >a, >a:focus, >a:hover {
+                background-color: transparent;
+                color: #fff;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        background-color: transparentize(darken(#333D4E,10%), 0.1);
+        border: 1px solid rgba(255,255,255,0.5);
+        border-top: 1px dashed rgba(0,0,0,0.7);
+
+        > li {
+            >a {
+                color: lighten(#777,25%);
+            }
+            >a:hover {
+                background-color: transparent;
+                color: #fff;
+            }
+        }
+
+        .divider {
+            background-color: rgba(255,255,255,0.5);
         }
     }
 }

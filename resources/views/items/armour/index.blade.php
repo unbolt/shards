@@ -4,8 +4,6 @@
 
 @section('content')
 
-    @include('users.userbar')
-
     <div class="container">
         <table class="table table-hover item-table" width="100%">
             <thead>

@@ -36,6 +36,9 @@
         </script>
     </head>
     <body class="@yield('body_class')">
+
+        @include('users.userbar')
+
         @yield('content')
     </body>
 </html>
