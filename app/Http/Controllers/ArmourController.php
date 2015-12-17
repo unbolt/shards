@@ -108,7 +108,10 @@ class ArmourController extends Controller
      */
     public function show($id)
     {
-        //
+        $armour = Armour::findOrFail($id);
+
+        return view('items.armour.show')
+                ->with('armour', $armour);
     }
 
     /**

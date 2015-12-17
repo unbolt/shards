@@ -15,13 +15,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             @if( $authUser )
-                <li><a href="#">Characters</a></li>
+                <li><a href="/character">Characters</a></li>
             @endif
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Items <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Weapons</a></li>
-                    <li><a href="#">Armour</a></li>
+                    <li><a href="/items/weapons">Weapons</a></li>
+                    <li><a href="/items/armour">Armour</a></li>
                     <li><a href="#">Consumables</a></li>
                     <li><a href="#">Items</a></li>
                     <!--<li role="separator" class="divider"></li>-->

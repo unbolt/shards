@@ -14,13 +14,20 @@ use Shards\Character;
 use Shards\Job;
 use Shards\Race;
 
-
 class CharacterController extends Controller
 {
 
     public function __construct() {
         // We want authentication on by default for this controller
         $this->middleware('auth');
+    }
+
+    public function index() {
+        // Show character list
+        $characters = Character::where('user_id', Auth::user()->id)->get();
+
+        return view('characters.index')
+                ->with('characters', $characters);
     }
 
     /**

@@ -14,4 +14,14 @@ class Character extends Model
         return $this->belongsTo('Shards\User');
     }
 
+    public function job()
+    {
+        return $this->belongsTo('Shards\Job');
+    }
+
+    public function race()
+    {
+        return $this->belongsTo('Shards\Race');
+    }
+
 }

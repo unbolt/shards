@@ -52,7 +52,7 @@
                             <div class="item-icon" data-icon="{{ $item->icon }}"></div>
                         </td>
                         <td class="item-name">
-                            <a href="/item/{{ $item->id }}" class="quality-{{ $item->quality_id }}">{{ $item->name }}</a>
+                            <a href="{{ $item->url }}" class="quality-{{ $item->quality_id }}">{{ $item->name }}</a>
                         </td>
                         <td>
                             <span class="item-slot" data-slot-id="{{ $item->armour_slot_id }}"></span>

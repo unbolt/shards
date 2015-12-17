@@ -45,6 +45,17 @@ Route::resource('job', 'JobController');
 // Race - RESTful
 Route::resource('race', 'RaceController');
 
+// ITEM DATABASE
+Route::group(['prefix' => 'items'], function() {
+    Route::group(['prefix' => 'armour'], function() {
+        Route::get('/', 'ArmourController@index');
+        Route::get('/{id}/{slug}', 'ArmourController@show')->where('id', '[0-9]+');
+    });
+
+    Route::get('/weapons', 'WeaponController@index');
+});
+
+
 // ARMOUR
 Route::get('armour/search/{term}', 'ArmourController@search');
 Route::resource('armour', 'ArmourController');

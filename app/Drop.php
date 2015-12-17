@@ -10,7 +10,7 @@ class Drop extends Model
     protected $table = 'drops';
 
     public function spawn() {
-        return $this->belongsTo('App\Spawn');
+        return $this->belongsTo('Shards\Spawn');
     }
 
     public function droppable() {
