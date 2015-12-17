@@ -1,0 +1,30 @@
+.character-container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .character {
+        width: 20%;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 5px;
+        cursor: pointer;
+
+        .portrait {
+            display: block;
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            margin: auto;
+            content: '';
+            background-color: rgba(255,255,255,0.5);
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 15px transparentize(lighten($highlight,10%), 0.1);
+        }
+    }
+}
