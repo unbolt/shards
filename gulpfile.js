@@ -24,9 +24,6 @@ elixir(function(mix) {
                 'item/search.js',
                 'item/armour/create.js',     // Armour creation
                 'spawns/show.js',            // Runs drop testing for spawns page
-
-                // Game related
-                'engine/city.js'    // Test city
             ],
 
             'public/js/shards.js')
