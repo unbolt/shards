@@ -4,6 +4,12 @@ namespace Shards\Http\Controllers;
 
 use Shards\Http\Controllers\Controller;
 
+use Auth;
+
+use Shards\User;
+use Shards\Character;
+
+
 class UserController extends Controller {
 
     /*****
@@ -23,7 +29,11 @@ class UserController extends Controller {
     public function dashboard() {
         // Shows the users dashboard
 
-        return view('users.dashboard');
+        // Get the user to display, that's this one
+        $user = Auth::user();
+
+        return view('users.dashboard')
+                ->withUser($user);
     }
 
 }
