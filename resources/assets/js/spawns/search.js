@@ -1,28 +1,17 @@
 $(function() {
     // Sets up the search boxes for items wherever they may appear
-    var armourItems = new Bloodhound({
+    var spawnItems = new Bloodhound({
         datumTokenizer: function (datum) {
             return Bloodhound.tokenizers.whitespace(datum.value);
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         remote: {
-            url: '/armour/search/%QUERY',
+            url: '/spawn/search/%QUERY',
             wildcard: '%QUERY'
         }
     });
 
-    var weaponItems = new Bloodhound({
-        datumTokenizer: function (datum) {
-            return Bloodhound.tokenizers.whitespace(datum.value);
-        },
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        remote: {
-            url: '/weapon/search/%QUERY',
-            wildcard: '%QUERY'
-        }
-    });
-
-    $('.typeahead-items') 
+    $('.typeahead-spawns')
         .on('keypress', function(e) {
             return e.which !== 13;
         })
@@ -31,21 +20,12 @@ $(function() {
                 highlight: true
             },
             {
-                name: 'armourItems',
+                name: 'spawnItems',
                 async: true,
                 display: 'name',
-                source: armourItems,
+                source: spawnItems,
                 templates: {
-                    suggestion: Handlebars.compile('<div><img src="'+ EQUIPMENT_ICON_URL + '{{icon}}" /><strong>{{name}}</strong></div>')
-                }
-            },
-            {
-                name: 'weaponItems',
-                async: true,
-                display: 'name',
-                source: weaponItems,
-                templates: {
-                    suggestion: Handlebars.compile('<div><img src="'+ EQUIPMENT_ICON_URL + '{{icon}}" /><strong>{{name}}</strong></div>')
+                    suggestion: Handlebars.compile('<div><strong>{{name}}</strong></div>')
                 }
             }
         )
@@ -54,7 +34,7 @@ $(function() {
             function(ev, suggestion) {
 
                 // Clear the typeahead box
-                $('.typeahead-items').typeahead('val', '');
+                $('.typeahead-spawns').typeahead('val', '');
 
                 // Generate a random string
                 var random = randomString(5);
@@ -66,13 +46,9 @@ $(function() {
 
                 // Create the template
                 var template = Handlebars.compile(`
-                    <input type="hidden" name="drops[`+random+`][id]" value="{{id}}" />
-                    <input type="hidden" name="drops[`+random+`][type]" value="{{type}}" />
-                    <input type="hidden" id="chance-{{type}}-{{id}}-`+random+`" name="drops[`+random+`][chance]" value="0" />
-                    <div class="col-md-2">
-                        <img src="`+ EQUIPMENT_ICON_URL+`{{icon}}" />
-                    </div>
-                    <div class="col-md-8 quality-{{quality_id}}">
+                    <input type="hidden" name="spawns[`+random+`][id]" value="{{id}}" />
+                    <input type="hidden" id="chance-{{id}}-`+random+`" name="spawns[`+random+`][chance]" value="0" />
+                    <div class="col-md-8">
                         {{name}}
                         <div class="row">
                             <div class="col-md-12">
@@ -81,7 +57,7 @@ $(function() {
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <span class="drop-rate-{{id}}-`+random+`">0</span>%
+                        <span class="spawns-rate-{{id}}-`+random+`">0</span>%
                     </div>`);
                 // Apply variables to the template
                 var drop = template(suggestion);
@@ -92,15 +68,15 @@ $(function() {
 
                 dropContainer.append(drop);
 
-                $('.drop-list').append(dropContainer);
+                $('.spawn-list').append(dropContainer);
 
                 // Sliderise the slider
                 $('.slider-'+suggestion.id+'-'+random).append(slider);
                 $('#'+sliderName).slider({
                     tooltip: 'hide',
                     formatter: function(value) {
-                        $('.drop-rate-'+suggestion.id+'-'+random).text(value);
-                        $('#chance-'+suggestion.type+'-'+suggestion.id+'-'+random).val(value);
+                        $('.spawns-rate-'+suggestion.id+'-'+random).text(value);
+                        $('#chance-'+suggestion.id+'-'+random).val(value);
                     }
                 });
             }

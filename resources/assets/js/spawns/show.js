@@ -110,7 +110,7 @@ $(function() {
 
             }
 
-            repeatXI(checkLoot, 10, 1000, true);
+            repeatXI(checkLoot, 5, 5000, true);
             calculateResults();
         });
     }

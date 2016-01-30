@@ -23,7 +23,7 @@
                 <h3>Add Drops</h3>
 
                 <div class="form-group">
-                    {!! Form::text('item_search', null, array('placeholder' => 'Search for items...', 'class' => 'form-control typeahead')) !!}
+                    {!! Form::text('item_search', null, array('placeholder' => 'Search for items...', 'class' => 'form-control typeahead-items')) !!}
                 </div>
 
                 <div class="form-group">
