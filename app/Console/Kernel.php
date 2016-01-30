@@ -2,6 +2,7 @@
 
 namespace Shards\Console;
 
+use DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -14,7 +15,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \Shards\Console\Commands\Inspire::class,
-        \Shards\Console\Commands\ChatServer::class
+        \Shards\Console\Commands\ChatServer::class,
+        \Shards\Console\Commands\AddEnergy::class
     ];
 
     /**
@@ -25,7 +27,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
+        $schedule->command('character:addEnergy')->everyFiveMinutes()->sendOutputTo("/www/sites/shards/storage/logs/addenergy.log");
     }
 }

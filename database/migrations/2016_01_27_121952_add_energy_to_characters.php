@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCharacterJobsTable extends Migration
+class AddEnergyToCharacters extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateCharacterJobsTable extends Migration
      */
     public function up()
     {
-        Schema::create('jobs', function (Blueprint $table) {
-            $table->increments('id');
-            $table->char('name', 30);
-            $table->timestamps();
+        Schema::table('characters', function (Blueprint $table) {
+            // Add energy to the characters table, setting default to 1
+            $table->integer('energy')->default(1);
         });
     }
 
@@ -26,6 +25,7 @@ class CreateCharacterJobsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('jobs');
+        //
+        $table->dropColumn('energy');
     }
 }
