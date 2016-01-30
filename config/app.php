@@ -138,6 +138,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Kamaln7\Toastr\ToastrServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -195,7 +196,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Toastr'    => Kamaln7\Toastr\Facades\Toastr::class,
         'Form'      => Collective\Html\FormFacade::class,
-        'Html'      => Collective\Html\HtmlFacade::class
+        'Html'      => Collective\Html\HtmlFacade::class,
+        'Image'     => Intervention\Image\Facades\Image::class
 
     ],
 

@@ -10,7 +10,9 @@
         "doctrine/dbal": "2.4.2",
         "oriceon/toastr-5-laravel": "dev-master",
         "cboden/ratchet": "0.3.*",
-        "laravelcollective/html": "5.1.*"
+        "laravelcollective/html": "5.1.*",
+        "intervention/image": "~2.3",
+        "intervention/imagecache": "~2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
