@@ -135,6 +135,17 @@ class SpawnController extends Controller
     }
 
     /**
+        * ALL KINDS OF SEARCH!
+
+        * nah, j/k - it's a spawn search
+    **/
+    public function search($term) {
+        $spawn = Spawn::where('name', 'LIKE', '%'.$term.'%')->get();
+
+        return $spawn;
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

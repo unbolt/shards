@@ -67,3 +67,7 @@ Route::resource('weapon', 'WeaponController');
 Route::resource('monster', 'MonsterController');
 Route::resource('spawn', 'SpawnController');
 Route::get('spawn/drops/{id}', 'SpawnController@getDrops');
+Route::get('spawn/search/{term}', 'SpawnController@search');
+
+// Missions
+Route::resource('mission', 'MissionController');
