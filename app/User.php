@@ -38,4 +38,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasMany('Shards\Character');
     }
+
+    public function activeCharacter()
+    {
+        if($this->active_character_id) {
+            return $this->hasOne('Shards\Character', 'id', 'active_character_id');
+        } else {
+            return null;
+        }
+    }
 }
