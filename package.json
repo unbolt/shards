@@ -5,7 +5,10 @@
     "babel-core": "^6.3.17",
     "gulp": "^3.8.8",
     "gulp-babel": "^6.1.1",
-    "laravel-elixir": "^2.0.0",
-    "minimist": "^1.2.0"
+    "laravel-elixir": "^4.0.0",
+    "laravel-elixir-handlebars": "git+https://github.com/unbolt/laravel-elixir-handlebars.git",
+    "handlebars": "^4.0.0",
+    "minimist": "^1.2.0",
+    "stream-browserify": "^2.0.1"
   }
 }

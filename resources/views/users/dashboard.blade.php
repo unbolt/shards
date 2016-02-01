@@ -26,11 +26,11 @@
                                 </div>
                                 <div class="col-sm-3 resource">
                                     <div class="resource-label">Shards</div>
-                                    <h4>26</h4>
+                                    <h4>{{ $user->activeCharacter->shards }}</h4>
                                 </div>
                                 <div class="col-sm-3 resource">
                                     <div class="resource-label">Gold</div>
-                                    <h4>1,250</h4>
+                                    <h4>{{ $user->activeCharacter->gold }}</h4>
                                 </div>
                                 <div class="col-sm-3 resource">
                                     <div class="resource-label">Currency X</div>
@@ -46,9 +46,7 @@
             <div class="col-md-7">
                 <h3>Missions</h3>
 
-                <div class="panel">
-                    Select missions
-                </div>
+                @include('missions.dashboard-panel')
 
                 <h3>Activity Feed</h3>
 
