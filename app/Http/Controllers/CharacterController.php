@@ -11,6 +11,7 @@ use Shards\Http\Requests\StoreCharacterRequest;
 use Shards\Http\Controllers\Controller;
 
 use Shards\Character;
+use Shards\CharacterMission;
 use Shards\Job;
 use Shards\Race;
 
@@ -88,6 +89,59 @@ class CharacterController extends Controller
     {
         //
     }
+
+
+    /**
+     * Check if the user is a on a mission or not
+    */
+
+    public function checkMissionStatus() {
+        // Check if the character is on a mission or not and return
+
+        // Get active character
+        $character = Auth::user()->active_character_id;
+
+        if($character) {
+            $active_missions = CharacterMission::where('active', 1)
+                                                ->where('character_id', $character)
+                                                ->first();
+
+            if($active_missions) {
+                $return['mission_active'] = true;
+            } else {
+                $return['mission_active'] = false;
+            }
+
+            return $return;
+        }
+    }
+
+    /**
+    * Get the current mission information for a character
+    */
+
+    public function getCharacterMissionDetails() {
+        // Get active character
+        $character = Auth::user()->active_character_id;
+
+        if($character) {
+            $active_mission = CharacterMission::where('active', 1)
+                                                ->where('character_id', $character)
+                                                ->first();
+
+            if($active_mission) {
+                // Build the response
+                $return['name'] = $active_mission->mission->name;
+                $return['description'] = $active_mission->mission->description;
+                $return['start_at'] = $active_mission->start_at;
+                $return['finish_at'] = $active_mission->finish_at;
+            }
+        }
+
+        return $return;
+    }
+
+
 
     /**
      * Show the form for editing the specified resource.

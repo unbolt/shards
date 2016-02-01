@@ -71,3 +71,5 @@ Route::get('spawn/search/{term}', 'SpawnController@search');
 
 // Missions
 Route::resource('mission', 'MissionController');
+Route::get('character/mission/status', 'CharacterController@checkMissionStatus');
+Route::get('character/mission/details', 'CharacterController@getCharacterMissionDetails');

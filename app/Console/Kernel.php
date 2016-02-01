@@ -27,6 +27,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('character:addEnergy')->everyFiveMinutes()->sendOutputTo("/www/sites/shards/storage/logs/addenergy.log");
+        $schedule->command('character:addEnergy')->hourly()->sendOutputTo("/www/sites/shards/storage/logs/addenergy.log");
     }
 }
